@@ -117,17 +117,15 @@ export function PenyakitClient({ penyakit }: PenyakitClientProps) {
     <div className="space-y-6">
       <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
         <div>
-          <h1 className="text-2xl sm:text-3xl lg:text-4xl font-bold tracking-tight">Data Penyakit</h1>
-          <p className="text-sm sm:text-base text-muted-foreground">
+          <h1 className="text-2xl sm:text-3xl text-center md:text-left lg:text-4xl font-bold tracking-tight">Data Penyakit</h1>
+          <p className="text-sm sm:text-base text-center md:text-left text-muted-foreground">
             Kelola data penyakit gizi buruk
           </p>
         </div>
         <Dialog open={open} onOpenChange={(v) => { setOpen(v); if (!v) resetForm(); }}>
-          <DialogTrigger>
-            <Button size="lg" className="w-full sm:w-auto">
-              <Plus className="mr-2 h-5 w-5" />
-              Tambah Penyakit
-            </Button>
+          <DialogTrigger render={<Button size="lg" className="w-full sm:w-auto" />}>
+            <Plus className="mr-2 h-5 w-5" />
+            Tambah Penyakit
           </DialogTrigger>
           <DialogContent>
             <DialogHeader>

@@ -15,8 +15,8 @@ export function PatientViewPenyakit({
   return (
     <div className="space-y-6">
       <div>
-        <h1 className="text-2xl sm:text-3xl lg:text-4xl font-bold tracking-tight">Data Penyakit</h1>
-        <p className="text-sm sm:text-base text-muted-foreground">
+        <h1 className="text-2xl sm:text-3xl text-center md:text-left lg:text-4xl font-bold tracking-tight">Data Penyakit</h1>
+        <p className="text-sm sm:text-base text-center md:text-left text-muted-foreground">
           Daftar penyakit gizi buruk pada anak
         </p>
       </div>

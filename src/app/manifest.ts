@@ -2,8 +2,8 @@ import type { MetadataRoute } from "next";
 
 export default function manifest(): MetadataRoute.Manifest {
   return {
-    name: "Sistem Pakar Gizi Buruk",
-    short_name: "SP Gizi",
+    name: "kesehatanku",
+    short_name: "kesehatanku",
     description: "Sistem pakar diagnosa gizi buruk pada anak menggunakan metode Centainty Factory",
     start_url: "/",
     display: "standalone",
