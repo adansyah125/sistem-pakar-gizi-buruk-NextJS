@@ -24,7 +24,7 @@ import { Separator } from "@/components/ui/separator";
 import { Stethoscope, ClipboardList } from "lucide-react";
 import { toast } from "sonner";
 import { simpanHasil } from "./actions";
-import { hitungNaiveBayes } from "@/lib/naive-bayes";
+import { hitungCF } from "@/lib/certainty-factor";
 import { HasilDiagnosa } from "./hasil-diagnosa";
 import type { Gejala, Penyakit, Pasien } from "@/lib/types";
 
@@ -39,7 +39,7 @@ interface DiagnosaClientProps {
   defaultNama?: string;
 }
 
-type DiagnosisResult = ReturnType<typeof hitungNaiveBayes> & {
+type DiagnosisResult = ReturnType<typeof hitungCF> & {
   namaPasien: string;
   jenisKelamin: string;
 };
@@ -77,7 +77,7 @@ export function DiagnosaClient({ gejala, penyakit, pasien, defaultNama }: Diagno
 
     setLoading(true);
     try {
-      const result = hitungNaiveBayes(
+      const result = hitungCF(
         selectedGejala,
         penyakit,
         gejala

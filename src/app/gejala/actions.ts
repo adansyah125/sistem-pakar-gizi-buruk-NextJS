@@ -28,6 +28,7 @@ export async function createGejala(formData: FormData) {
     id_admin: 1,
     id_penyakit: Number(formData.get("id_penyakit")),
     nama_gejala: formData.get("nama_gejala") as string,
+    cf: Number(formData.get("cf")) || 0,
   };
 
   const { error } = await supabase.from("gejala").insert(data);
@@ -40,6 +41,7 @@ export async function updateGejala(id: number, formData: FormData) {
   const data = {
     id_penyakit: Number(formData.get("id_penyakit")),
     nama_gejala: formData.get("nama_gejala") as string,
+    cf: Number(formData.get("cf")) || 0,
   };
 
   const { error } = await supabase

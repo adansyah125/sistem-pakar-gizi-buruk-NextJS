@@ -15,9 +15,49 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Sistem Pakar Gizi Buruk - Naive Bayes",
+  title: {
+    default: "Sistem Pakar Gizi Buruk - Centainty Factory",
+    template: "%s | Sistem Pakar Gizi Buruk",
+  },
   description:
-    "Sistem pakar diagnosa gizi buruk pada anak menggunakan metode Naive Bayes",
+    "Sistem pakar diagnosa gizi buruk pada anak menggunakan metode Centainty Factory. Cepat, akurat, dan mudah digunakan untuk mendiagnosa Marasmus, Kwarshiorkor, dan Marasmik-Kwarshiorkor.",
+  keywords: [
+    "sistem pakar",
+    "gizi buruk",
+    "naive bayes",
+    "diagnosa",
+    "marasmus",
+    "kwarshiorkor",
+    "marasmik",
+    "anak",
+    "kesehatan",
+  ],
+  authors: [{ name: "Sistem Pakar Gizi Buruk" }],
+  creator: "Sistem Pakar Gizi Buruk",
+  metadataBase: new URL("https://sistempakargizi.vercel.app"),
+  openGraph: {
+    title: "Sistem Pakar Gizi Buruk - Centainty Factory",
+    description:
+      "Sistem pakar diagnosa gizi buruk pada anak menggunakan metode Centainty Factory",
+    url: "https://sistempakargizi.vercel.app",
+    siteName: "Sistem Pakar Gizi Buruk",
+    locale: "id_ID",
+    type: "website",
+  },
+  twitter: {
+    card: "summary",
+    title: "Sistem Pakar Gizi Buruk - Centainty Factory",
+    description:
+      "Sistem pakar diagnosa gizi buruk pada anak menggunakan metode Centainty Factory",
+  },
+  robots: {
+    index: true,
+    follow: true,
+  },
+  icons: {
+    icon: "/icon.svg",
+  },
+  manifest: "/manifest",
 };
 
 export default function RootLayout({

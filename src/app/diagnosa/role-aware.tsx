@@ -51,6 +51,9 @@ export function RoleAwareDiagnosa({
         <p className="text-muted-foreground">
           Pilih gejala yang dialami pasien untuk mendapatkan hasil diagnosa
         </p>
+        <p className="text-sm text-muted-foreground/70 mt-1">
+          Pastikan gejala yang dipilih sesuai dengan kondisi pasien. Semakin banyak gejala yang relevan, semakin akurat hasil diagnosa.
+        </p>
       </div>
       <DiagnosaClient
         gejala={gejala}

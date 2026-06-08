@@ -7,7 +7,7 @@ import {
 } from "@/components/ui/card";
 import {
   AlertTriangle,
-  BrainCircuit,
+  ShieldCheck,
   Stethoscope,
   Info,
   ClipboardList,
@@ -24,11 +24,11 @@ const infoCards = [
       "Gizi buruk adalah suatu keadaan kekurangan konsumsi zat gizi yang disebabkan oleh rendahnya konsumsi energi protein dalam makanan sehari-hari, yang ditandai dengan berat dan tinggi badan tidak sesuai umur (dibawah rata-rata) dan harus ditetapkan oleh tenaga medis.",
   },
   {
-    title: "Naive Bayes",
-    icon: BrainCircuit,
+    title: "Certainty Factor",
+    icon: ShieldCheck, 
     description:
-      "Naive Bayes classifier merupakan salah satu metoda pemelajaran mesin yang memanfaatkan perhitungan probabilitas dan statistik yang dikemukakan oleh ilmuwan Inggris Thomas Bayes.",
-  },
+      "Certainty Factor (CF) merupakan metode yang digunakan untuk mengakomodasi nilai kepastian atau tingkat keyakinan seorang pakar terhadap suatu data, aturan, atau kesimpulan yang kebenarannya belum pasti.",
+},
   {
     title: "Gejala",
     icon: Stethoscope,
@@ -39,8 +39,8 @@ const infoCards = [
     title: "Tentang",
     icon: Info,
     description:
-      "Tentang Aplikasi ini adalah untuk mengetahui diagnosis gizi buruk sesuai gejala yang dialami pasien dengan menggunakan metode Naive Bayes.",
-  },
+      "Tentang Aplikasi ini adalah untuk mengetahui diagnosis gizi buruk sesuai gejala yang dialami pasien dengan menggunakan metode Certainty Factor.",
+},
 ];
 
 const navCards = [

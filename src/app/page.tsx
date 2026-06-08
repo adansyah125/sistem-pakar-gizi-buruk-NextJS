@@ -36,7 +36,7 @@ export default function Home() {
             Diagnosa Gizi Buruk pada Anak
           </h1>
           <p className="mt-6 max-w-2xl text-base sm:text-lg md:text-xl text-muted-foreground">
-            Sistem pakar berbasis metode Naive Bayes untuk mendiagnosa jenis
+            Sistem pakar berbasis metode Centainty factory untuk mendiagnosa jenis
             gizi buruk pada anak. Cepat, akurat, dan mudah digunakan.
           </p>
           <div className="mt-10 flex flex-wrap items-center justify-center gap-4">
@@ -55,8 +55,8 @@ export default function Home() {
             <div className="rounded-lg border p-6 sm:p-8">
               <h3 className="mb-3 text-base sm:text-lg font-semibold">Naive Bayes</h3>
               <p className="text-sm sm:text-base text-muted-foreground">
-                Menggunakan metode Naive Bayes untuk menghitung probabilitas
-                jenis gizi buruk berdasarkan gejala yang dipilih.
+               Menggunakan metode Certainty Factor untuk menghitung tingkat keyakinan 
+jenis gizi buruk berdasarkan gejala yang dipilih.
               </p>
             </div>
             <div className="rounded-lg border p-6 sm:p-8">
@@ -80,7 +80,7 @@ export default function Home() {
       <footer className="border-t py-6 text-center text-sm sm:text-base text-muted-foreground">
         <div className="container mx-auto px-4 sm:px-6">
           &copy; {new Date().getFullYear()} Sistem Pakar Gizi Buruk - Metode
-          Naive Bayes
+          Centainty Factory
         </div>
       </footer>
     </div>

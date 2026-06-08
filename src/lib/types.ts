@@ -34,6 +34,7 @@ export interface Gejala {
   id_admin: number;
   id_penyakit: number;
   nama_gejala: string;
+  cf: number;
 }
 
 export interface Nilai {
