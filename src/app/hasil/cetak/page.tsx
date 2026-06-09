@@ -1,5 +1,12 @@
+import type { Metadata } from "next";
 import { AdminLayout } from "@/components/layout/app-layout";
 import { createServerSupabase } from "@/lib/supabase/server";
+
+export const metadata: Metadata = {
+  title: "Cetak Hasil Diagnosa",
+  description: "Cetak laporan hasil diagnosa gizi buruk.",
+  robots: { index: false, follow: false },
+};
 import { PrintButton } from "./print-button";
 
 export default async function CetakPage() {
@@ -141,7 +148,7 @@ export default async function CetakPage() {
                 LAPORAN HASIL DIAGNOSA
               </h1>
               <p className="text-sm text-muted-foreground">
-                Sistem Pakar Gizi Buruk — Metode Centainty factory
+                Sistem Pakar Gizi Buruk — Metode Certainty Factor
               </p>
               <p className="text-xs text-muted-foreground mt-1">
                 Tanggal Cetak: {today}

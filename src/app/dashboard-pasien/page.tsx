@@ -1,4 +1,10 @@
+import type { Metadata } from "next";
 import { PatientLayout } from "@/components/layout/app-layout";
+
+export const metadata: Metadata = {
+  title: "Dashboard Pasien",
+  description: "Dashboard pasien sistem pakar diagnosa gizi buruk.",
+};
 import {
   Card,
   CardContent,

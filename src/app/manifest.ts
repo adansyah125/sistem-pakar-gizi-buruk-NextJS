@@ -2,9 +2,9 @@ import type { MetadataRoute } from "next";
 
 export default function manifest(): MetadataRoute.Manifest {
   return {
-    name: "kesehatanku",
-    short_name: "kesehatanku",
-    description: "Sistem pakar diagnosa gizi buruk pada anak menggunakan metode Centainty Factory",
+    name: "Sistem Pakar Gizi Buruk - Certainty Factor",
+    short_name: "SP Gizi Buruk",
+    description: "Sistem pakar diagnosa gizi buruk pada anak menggunakan metode Certainty Factor",
     start_url: "/",
     display: "standalone",
     background_color: "#09090b",

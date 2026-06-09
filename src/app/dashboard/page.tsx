@@ -1,5 +1,12 @@
+import type { Metadata } from "next";
 import { createServerSupabase } from "@/lib/supabase/server";
 import { AdminLayout } from "@/components/layout/app-layout";
+
+export const metadata: Metadata = {
+  title: "Dashboard Admin",
+  description: "Panel admin sistem pakar gizi buruk.",
+  robots: { index: false, follow: false },
+};
 import {
   Card,
   CardContent,

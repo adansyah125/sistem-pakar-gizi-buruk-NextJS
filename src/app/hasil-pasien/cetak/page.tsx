@@ -86,7 +86,7 @@ export default function CetakPasienPage() {
                 LAPORAN HASIL DIAGNOSA
               </h1>
               <p className="text-sm text-muted-foreground">
-                Sistem Pakar Gizi Buruk — Metode Centainty Factory
+                Sistem Pakar Gizi Buruk — Metode Certainty Factor
               </p>
               <p className="text-xs text-muted-foreground mt-1">
                 Tanggal Cetak: {today}

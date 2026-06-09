@@ -1,6 +1,18 @@
+import type { Metadata } from "next";
 import Link from "next/link";
 import { ArrowRight, Stethoscope, Shield, User } from "lucide-react";
 import { Button } from "@/components/ui/button";
+
+export const metadata: Metadata = {
+  title: "Beranda",
+  description:
+    "Sistem pakar diagnosa gizi buruk pada anak menggunakan metode Certainty Factor. Diagnosa Marasmus, Kwarshiorkor, dan Marasmik-Kwarshiorkor secara cepat dan akurat.",
+  openGraph: {
+    title: "Sistem Pakar Gizi Buruk - Diagnosa Gizi Buruk Anak",
+    description:
+      "Diagnosa gizi buruk pada anak secara cepat menggunakan metode Certainty Factor.",
+  },
+};
 
 export default function Home() {
   return (
@@ -53,7 +65,7 @@ export default function Home() {
         <section className="border-t py-12 sm:py-16">
           <div className="container mx-auto grid gap-6 sm:gap-8 px-4 sm:px-6 md:grid-cols-3">
             <div className="rounded-lg border p-6 sm:p-8">
-              <h3 className="mb-3 text-base sm:text-lg font-semibold">Naive Bayes</h3>
+              <h3 className="mb-3 text-base sm:text-lg font-semibold">Certainty Factor</h3>
               <p className="text-sm sm:text-base text-muted-foreground">
                Menggunakan metode Certainty Factor untuk menghitung tingkat keyakinan 
 jenis gizi buruk berdasarkan gejala yang dipilih.
@@ -80,7 +92,7 @@ jenis gizi buruk berdasarkan gejala yang dipilih.
       <footer className="border-t py-6 text-center text-sm sm:text-base text-muted-foreground">
         <div className="container mx-auto px-4 sm:px-6">
           &copy; {new Date().getFullYear()} Sistem Pakar Gizi Buruk - Metode
-          Centainty Factory
+          Certainty Factor
         </div>
       </footer>
     </div>
