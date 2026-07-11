@@ -1,5 +1,6 @@
 "use client";
 
+import { memo } from "react";
 import {
   ChartContainer,
   ChartTooltip,
@@ -25,7 +26,7 @@ interface ChartAreaProps {
   data: Array<{ name: string; total: number }>;
 }
 
-export function ChartArea({ data }: ChartAreaProps) {
+export const ChartArea = memo(function ChartArea({ data }: ChartAreaProps) {
   const hasData = data.some((d) => d.total > 0);
   const mainColor = "#818cf8";
   const maxVal = Math.max(...data.map((d) => d.total), 1);
@@ -95,4 +96,4 @@ export function ChartArea({ data }: ChartAreaProps) {
       </CardContent>
     </Card>
   );
-}
+});

@@ -47,9 +47,10 @@ export function RoleAwareDiagnosa({
   const content = (
     <div className="space-y-6">
       <div>
-        <h1 className="text-3xl font-bold tracking-tight">Diagnosa</h1>
-        <p className="text-muted-foreground">
-          Pilih gejala yang dialami pasien untuk mendapatkan hasil diagnosa
+        <h1 className="text-3xl font-bold tracking-tight text-center md:text-left">Diagnosa</h1>
+        
+        <p className="text-sm text-muted-foreground/70 mt-1 text-justify">
+          Pastikan gejala yang dipilih sesuai dengan kondisi pasien. Semakin banyak gejala yang relevan, semakin akurat hasil diagnosa.
         </p>
       </div>
       <DiagnosaClient

@@ -110,10 +110,10 @@ export function PatientViewPasien() {
       <div className="space-y-6 max-w-5xl mx-auto">
         <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
           <div>
-            <h1 className="text-2xl sm:text-3xl lg:text-4xl font-bold tracking-tight">
+            <h1 className="text-2xl sm:text-3xl text-center md:text-left lg:text-4xl font-bold tracking-tight">
               Data Saya
             </h1>
-            <p className="text-sm sm:text-base text-muted-foreground mt-1">
+            <p className="text-sm sm:text-base text-center md:text-left text-muted-foreground mt-1">
               Lengkapi data diri dan rekam medis Anda
             </p>
           </div>

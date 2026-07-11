@@ -70,10 +70,10 @@ export default function HasilPasienPage() {
       <div className="space-y-6">
         <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
           <div>
-            <h1 className="text-2xl sm:text-3xl lg:text-4xl font-bold tracking-tight">
+            <h1 className="text-2xl sm:text-3xl text-center md:text-left lg:text-4xl font-bold tracking-tight">
               Hasil Diagnosa Saya
             </h1>
-            <p className="text-sm sm:text-base text-muted-foreground">
+            <p className="text-sm sm:text-base text-center md:text-left text-muted-foreground">
               Riwayat hasil diagnosa gizi buruk
             </p>
           </div>

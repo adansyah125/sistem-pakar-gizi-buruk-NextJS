@@ -1,5 +1,12 @@
+import type { Metadata } from "next";
 import { createServerSupabase } from "@/lib/supabase/server";
 import { RoleAwareDiagnosa } from "./role-aware";
+
+export const metadata: Metadata = {
+  title: "Diagnosa",
+  description:
+    "Lakukan diagnosa gizi buruk pada anak dengan memilih gejala klinis yang dialami. Sistem akan menghitung menggunakan metode Certainty Factor.",
+};
 
 export default async function DiagnosaPage() {
   const supabase = await createServerSupabase();

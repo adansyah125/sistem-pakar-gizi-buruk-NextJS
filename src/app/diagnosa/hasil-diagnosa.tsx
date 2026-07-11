@@ -26,9 +26,9 @@ import {
   FlaskConical,
   User,
 } from "lucide-react";
-import { hitungNaiveBayes } from "@/lib/naive-bayes";
+import { hitungCF } from "@/lib/certainty-factor";
 
-type DiagnosisResult = ReturnType<typeof hitungNaiveBayes> & {
+type DiagnosisResult = ReturnType<typeof hitungCF> & {
   namaPasien: string;
   jenisKelamin: string;
 };
@@ -46,10 +46,6 @@ export function HasilDiagnosa({
 }: HasilDiagnosaProps) {
   const { topResult, hasilAkhir, selectedGejala, namaPasien, jenisKelamin } =
     result;
-
-  const maxNilai = hasilAkhir[0]?.nilai_akhir ?? 1;
-  const normalisasi = (nilai: number) =>
-    maxNilai > 0 ? (nilai / maxNilai) * 100 : 0;
 
   return (
     <div className="space-y-6">
@@ -86,9 +82,9 @@ export function HasilDiagnosa({
                   <CardTitle className="text-xl sm:text-2xl">
                     {topResult.penyakit.nama_penyakit}
                   </CardTitle>
-                  <CardDescription className="text-sm sm:text-base">
-                    Probabilitas: {normalisasi(topResult.nilai_akhir).toFixed(2)}%
-                  </CardDescription>
+                    <CardDescription className="text-sm sm:text-base">
+                      Tingkat Keyakinan: {(topResult.cf_akhir * 100).toFixed(2)}%
+                    </CardDescription>
                 </div>
               </div>
             </CardHeader>
@@ -122,10 +118,10 @@ export function HasilDiagnosa({
             <CardHeader>
               <CardTitle className="text-lg sm:text-xl flex items-center gap-2">
                 <FlaskConical className="h-5 w-5 sm:h-6 sm:w-6" />
-                Detail Perhitungan Naive Bayes
+                Detail Perhitungan Certainty Factor
               </CardTitle>
               <CardDescription>
-                Prior probability: {(result.prior * 100).toFixed(2)}% per penyakit
+                Nilai CF dikombinasikan secara sequential untuk setiap penyakit
               </CardDescription>
             </CardHeader>
             <CardContent>
@@ -133,8 +129,8 @@ export function HasilDiagnosa({
                 <TableHeader>
                   <TableRow>
                     <TableHead>Penyakit</TableHead>
-                    <TableHead>Skor</TableHead>
-                    <TableHead>Probabilitas</TableHead>
+                    <TableHead>CF Akhir</TableHead>
+                    <TableHead>Keyakinan</TableHead>
                     <TableHead>Ranking</TableHead>
                   </TableRow>
                 </TableHeader>
@@ -159,11 +155,11 @@ export function HasilDiagnosa({
                           )}
                         </div>
                       </TableCell>
-                      <TableCell>
-                        {normalisasi(h.nilai_akhir).toFixed(2)}
+                      <TableCell className="font-mono">
+                        {h.cf_akhir.toFixed(4)}
                       </TableCell>
                       <TableCell>
-                        {normalisasi(h.nilai_akhir).toFixed(2)}%
+                        {(h.cf_akhir * 100).toFixed(2)}%
                       </TableCell>
                       <TableCell>
                         <div className="flex items-center gap-2">
@@ -171,7 +167,7 @@ export function HasilDiagnosa({
                             <div
                               className="h-full rounded-full bg-primary transition-all"
                               style={{
-                                width: `${normalisasi(h.nilai_akhir)}%`,
+                                width: `${h.cf_akhir * 100}%`,
                               }}
                             />
                           </div>
@@ -211,11 +207,11 @@ export function HasilDiagnosa({
             </CardHeader>
             <CardContent className="text-sm sm:text-base text-muted-foreground space-y-2">
               <p>
-                Hasil diagnosa ini dihitung menggunakan metode Naive Bayes
-                berdasarkan gejala yang dipilih.
+                Hasil diagnosa ini dihitung menggunakan metode Certainty Factor
+                berdasarkan bobot keyakinan pakar pada setiap gejala.
               </p>
               <p>
-                Penyakit dengan probabilitas tertinggi adalah hasil diagnosa
+                Penyakit dengan nilai CF tertinggi adalah hasil diagnosa
                 yang paling mungkin.
               </p>
               <p className="text-xs">

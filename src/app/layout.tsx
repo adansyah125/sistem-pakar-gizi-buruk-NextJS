@@ -14,10 +14,87 @@ const geistMono = Geist_Mono({
   subsets: ["latin"],
 });
 
+const baseUrl = "https://sistempakargizi.vercel.app";
+
 export const metadata: Metadata = {
-  title: "Sistem Pakar Gizi Buruk - Naive Bayes",
+  title: {
+    default: "Sistem Pakar Gizi Buruk - Certainty Factor",
+    template: "%s | Sistem Pakar Gizi Buruk",
+  },
   description:
-    "Sistem pakar diagnosa gizi buruk pada anak menggunakan metode Naive Bayes",
+    "Sistem pakar diagnosa gizi buruk pada anak menggunakan metode Certainty Factor. Cepat, akurat, dan mudah digunakan untuk mendiagnosa Marasmus, Kwarshiorkor, dan Marasmik-Kwarshiorkor.",
+  keywords: [
+    "sistem pakar",
+    "gizi buruk",
+    "certainty factor",
+    "diagnosa",
+    "marasmus",
+    "kwarshiorkor",
+    "marasmik-kwarshiorkor",
+    "anak",
+    "kesehatan",
+    "malnutrisi",
+    "diagnosa online",
+  ],
+  authors: [{ name: "Sistem Pakar Gizi Buruk" }],
+  creator: "Sistem Pakar Gizi Buruk",
+  metadataBase: new URL(baseUrl),
+  alternates: {
+    canonical: baseUrl,
+  },
+  openGraph: {
+    title: "Sistem Pakar Gizi Buruk - Certainty Factor",
+    description:
+      "Sistem pakar diagnosa gizi buruk pada anak menggunakan metode Certainty Factor. Diagnosa Marasmus, Kwarshiorkor, dan Marasmik-Kwarshiorkor secara cepat.",
+    url: baseUrl,
+    siteName: "Sistem Pakar Gizi Buruk",
+    locale: "id_ID",
+    type: "website",
+    images: [
+      {
+        url: "/opengraph-image",
+        width: 1200,
+        height: 630,
+        alt: "Sistem Pakar Gizi Buruk",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Sistem Pakar Gizi Buruk - Certainty Factor",
+    description:
+      "Sistem pakar diagnosa gizi buruk pada anak menggunakan metode Certainty Factor.",
+    images: ["/opengraph-image"],
+  },
+  robots: {
+    index: true,
+    follow: true,
+  },
+  icons: {
+    icon: "/icon.svg",
+    apple: [{ url: "/icon.svg", sizes: "180x180" }],
+  },
+  manifest: "/manifest",
+};
+
+const jsonLd = {
+  "@context": "https://schema.org",
+  "@type": "WebApplication",
+  name: "Sistem Pakar Gizi Buruk",
+  description:
+    "Sistem pakar diagnosa gizi buruk pada anak menggunakan metode Certainty Factor",
+  url: baseUrl,
+  applicationCategory: "HealthApplication",
+  operatingSystem: "All",
+  author: {
+    "@type": "Organization",
+    name: "Sistem Pakar Gizi Buruk",
+  },
+  offers: {
+    "@type": "Offer",
+    price: "0",
+    priceCurrency: "IDR",
+  },
 };
 
 export default function RootLayout({
@@ -27,6 +104,12 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="id" suppressHydrationWarning>
+      <head>
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+        />
+      </head>
       <body
         className={`${geistSans.variable} ${geistMono.variable} font-sans antialiased`}
       >

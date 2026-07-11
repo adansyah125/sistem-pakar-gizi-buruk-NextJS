@@ -1,4 +1,10 @@
+import type { Metadata } from "next";
 import { PatientLayout } from "@/components/layout/app-layout";
+
+export const metadata: Metadata = {
+  title: "Dashboard Pasien",
+  description: "Dashboard pasien sistem pakar diagnosa gizi buruk.",
+};
 import {
   Card,
   CardContent,
@@ -7,7 +13,7 @@ import {
 } from "@/components/ui/card";
 import {
   AlertTriangle,
-  BrainCircuit,
+  ShieldCheck,
   Stethoscope,
   Info,
   ClipboardList,
@@ -24,11 +30,11 @@ const infoCards = [
       "Gizi buruk adalah suatu keadaan kekurangan konsumsi zat gizi yang disebabkan oleh rendahnya konsumsi energi protein dalam makanan sehari-hari, yang ditandai dengan berat dan tinggi badan tidak sesuai umur (dibawah rata-rata) dan harus ditetapkan oleh tenaga medis.",
   },
   {
-    title: "Naive Bayes",
-    icon: BrainCircuit,
+    title: "Certainty Factor",
+    icon: ShieldCheck, 
     description:
-      "Naive Bayes classifier merupakan salah satu metoda pemelajaran mesin yang memanfaatkan perhitungan probabilitas dan statistik yang dikemukakan oleh ilmuwan Inggris Thomas Bayes.",
-  },
+      "Certainty Factor (CF) merupakan metode yang digunakan untuk mengakomodasi nilai kepastian atau tingkat keyakinan seorang pakar terhadap suatu data, aturan, atau kesimpulan yang kebenarannya belum pasti.",
+},
   {
     title: "Gejala",
     icon: Stethoscope,
@@ -39,8 +45,8 @@ const infoCards = [
     title: "Tentang",
     icon: Info,
     description:
-      "Tentang Aplikasi ini adalah untuk mengetahui diagnosis gizi buruk sesuai gejala yang dialami pasien dengan menggunakan metode Naive Bayes.",
-  },
+      "Tentang Aplikasi ini adalah untuk mengetahui diagnosis gizi buruk sesuai gejala yang dialami pasien dengan menggunakan metode Certainty Factor.",
+},
 ];
 
 const navCards = [
@@ -75,10 +81,10 @@ export default function DashboardPasienPage() {
     <PatientLayout>
       <div className="space-y-8 sm:space-y-10">
         <div>
-          <h1 className="text-2xl sm:text-3xl lg:text-4xl font-bold tracking-tight">
+          <h1 className="text-2xl sm:text-3xl text-center md:text-left lg:text-4xl font-bold tracking-tight">
             Dashboard Pasien
           </h1>
-          <p className="text-sm sm:text-base text-muted-foreground mt-1">
+          <p className="text-sm sm:text-base text-center md:text-left text-muted-foreground mt-1">
             Selamat datang di sistem diagnosa gizi buruk
           </p>
         </div>
